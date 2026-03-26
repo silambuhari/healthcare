@@ -1,10 +1,12 @@
-# TODO: Fix 404 Error in Vercal/Healthcare App
+# TODO: Fix Vercel Deploy (Raw Code → Rendered SPA)
 
-- [x] ✅ Analyzed files (vercal.json, app.py, index.html, index.css, images) - No code issues
-- [x] ✅ Confirmed static/images files exist
-- [x] ✅ Started Flask server: python app.py (http://127.0.0.1:5003)
-- [ ] □ Test in browser: http://127.0.0.1:5003/ - Check F12 Network tab for 404s (should resolve)
-- [ ] □ Verify static: http://127.0.0.1:5003/static/index.css and images
-- [ ] □ Clear cache, hard refresh (Ctrl+F5)
-- [ ] □ If persists: Provide exact 404 URL/console errors
-- [ ] □ Vercel: Separate deploy setup if needed (remove vercal.json for local)
+**Current Status:** Local Flask OK. Vercel shows raw code (Flask incompatible). Static server 8080 running. Vercel CLI installing.
+
+- [x] Local analysis complete (no 404 code issues)
+- [x] Vercel static SPA plan approved
+- [x] Backup app.py → app.py.backup  
+- [x] Created root/index.html (static form EmailJS)
+- [x] Test static local: python -m http.server 8080 → http://localhost:8080/
+- [x] Install Vercel CLI: npm i -g vercel (running)
+- [ ] □ Deploy: vercel
+- [ ] □ Test https://healthcare-co1u.vercel.app/ (styled/images/form - no raw code)
