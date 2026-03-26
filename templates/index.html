@@ -1,0 +1,205 @@
+<head>
+    <title>Healthcare</title>
+
+     <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+</head>
+<!-- Smooth Scroll -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+<!-- ✅ HEADER -->
+<header>
+    <nav class="bd-header">
+        <h1 class="bd-logo">Healthcare</h1>
+        
+        <a href="#home">Home</a>
+       
+        <a href="#about">About</a>
+       
+        <a href="#application">Application</a>
+       
+       
+        <a href="#contact">Contact</a>
+        
+      
+    </nav>
+</header>
+
+
+<!-- ✅ HOME SECTION -->
+ <section id="home">
+<div class="bd-btn">
+    <button onclick="openwatsapp()">Chat Watsapp</button>
+</div>
+
+
+
+
+
+<div class="class-title">
+    <h1>Healthcare</h1>
+</div>
+
+
+
+<div class="bd-container">
+     <div class="bd-card">
+       <img src="{{ url_for('static', filename='images/blooddonation.jpg') }}">
+        <div class="bd-title">Blood Donation</div><br>
+        <div class="bd-p">
+            <p>Blood donation is a vital, voluntary healthcare process where a healthy person has blood drawn to be used for transfusions, supporting patients in need of surgery, cancer treatment, or recovering from trauma</p>
+            </div>
+    </div>
+
+    <div class="bd-card">
+        <img src="{{ url_for('static', filename='images/peragent.jpg') }}">
+        <div class="bd-title">Pregnancy</div>
+         <div class="bd-p">
+            <p>Comprehensive healthcare content for pregnancy focuses on maintaining the health of both the parent and the developing fetus through prenatal care, nutrition, and lifestyle adjustments. Key pillars include regular medical checkups, essential supplementation, and monitoring for danger signs.</p>
+            </div>
+    </div>
+
+    <div class="bd-card">
+        <img src="{{ url_for('static', filename='images/labtast.jpg') }}">
+        <div class="bd-title">Lab Test</div>
+         <div class="bd-p">
+            <p>Lab tests for a fetus in healthcare (prenatal testing) are essential for assessing growth, detecting genetic abnormalities, and screening for birth defects. Key tests include noninvasive prenatal screening (NIPS/NIPT) of maternal blood for fetal DNA, ultrasound screening (nuchal translucency), maternal serum markers (e.g., AFP, Quad screen), and diagnostic tests like amniocentesis or CVS.</p>
+            </div>
+    </div>
+
+    <div class="bd-card">
+        <img src="{{ url_for('static', filename='images/healthcare.jpg') }}">
+        <div class="bd-title">Home Care</div>
+         <div class="bd-p">
+            <p>In healthcare, home care refers to a broad spectrum of supportive and medical services provided in a patient's residence to promote independence, manage chronic conditions, or aid recovery after hospitalization. While the terms are often used interchangeably, there is a technical distinction between non-medical "home care" and clinical "home health care".</p>
+            </div>
+    </div>
+
+    <div class="bd-card">
+        <img src="{{ url_for('static', filename='images/xrae.jpg') }}">
+        <div class="bd-title">X-Ray</div>
+         <div class="bd-p">
+            <p>X-rays are a foundational medical imaging tool that uses a small, safe dose of ionizing radiation to create pictures of the internal structures of the body. They are essential for diagnosing, monitoring, and managing a wide range of conditions, primarily because different body tissues absorb radiation at varying rates. Dense structures like bones absorb more radiation and appear white, while softer tissues like lungs allow more radiation to pass through and appear darker.</p>
+            </div>
+    </div>
+</div>
+</section>
+
+<!-- ✅ CONTACT SECTION -->
+
+<section id="contact">
+<div class="contect">
+<div class="bd-contact">
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+        <h3>Address</h3>
+        <p>
+            No.166, Bharathi Street,<br/>
+            Tiruvannamalai,<br>
+            Tiruvannamalai 606 604.
+        </p>
+    </div>
+</div>
+
+
+       <div class="bd-contact">
+     <div class="contact-box">
+        <h3>Email Us</h3>
+            <p>healthcare@gmail.com<p>
+    </div>
+</div>
+
+
+        <div class="bd-contact">
+        <div class="contact-box">
+       <h3>Call Us</h3>
+            <p>+91 9042695549</p>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ✅ APPLICATION SECTION -->
+<section id="application">
+ <div class="contact-form">
+    <center><h2>Get In Touch</h2></center>
+    <form method="POST">
+      <label>Name</label>
+      <input type="text" name="name" required />
+      <label>Age</label>
+      <input type="number" name="age" min="1" max="120" required />
+      <label>Gender</label>
+      <input type="radio" name="gender" value="male" required> Male
+      <input type="radio" name="gender" value="female"> Female
+      <input type="radio" name="gender" value="other"> Other
+      <label>Phone</label>
+      <input type="number" name="phone" required />
+      <label>Email</label>
+      <input type="email" name="email" required />
+      <label>Message</label>
+      <textarea name="msg" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+</section>
+
+
+
+<!-- ✅ FOOTER -->
+
+
+  <!-- ===== FOOTER START ===== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#application">Application</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>
+        Healthcare is a broad field focused on improving, maintaining, and restoring physical and mental health through prevention, diagnosis, treatment, and management of illness, disease, and injury.
+      </p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Address: No.166 Bharathi Street, Tiruvannamalai 606 604.</p>
+      <p>Email: <a href="mailto:healthcare@gmail.com">healthcare@gmail.com</a></p>
+      <p>Phone: <a href="tel:9042695549">+91 9042695549</a></p>
+
+      <div class="social-icons">
+        <a href="#" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="#" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>Copyrights © 2025 BroTech Info. All rights reserved.</p>
+  </div>
+
+</footer>
