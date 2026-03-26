@@ -129,70 +129,28 @@
 <section id="application">
  <div class="contact-form">
     <center><h2>Get In Touch</h2></center>
-    <form id="contactForm">
+    <form method="POST">
       <label>Name</label>
-      <input type="text" id="name" required />
+      <input type="text" name="name" required />
       <label>Age</label>
-      <input type="number" id="age" min="1" max="120" required />
+      <input type="number" name="age" min="1" max="120" required />
       <label>Gender</label>
-      <input type="radio" id="genderMale" name="gender" value="male" required> Male
-      <input type="radio" id="genderFemale" name="gender" value="female"> Female
-      <input type="radio" id="genderOther" name="gender" value="other"> Other
+      <input type="radio" name="gender" value="male" required> Male
+      <input type="radio" name="gender" value="female"> Female
+      <input type="radio" name="gender" value="other"> Other
       <label>Phone</label>
-      <input type="number" id="phone" required />
+      <input type="number" name="phone" required />
       <label>Email</label>
-      <input type="email" id="email" required />
+      <input type="email" name="email" required />
       <label>Message</label>
-      <textarea id="msg" rows="4" required></textarea>
+      <textarea name="msg" rows="4" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </div>
 </div>
+</section>
 
-<!-- EmailJS CDN -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-   // Replace with your EmailJS keys (free at emailjs.com)
-   emailjs.init("YOUR_PUBLIC_KEY");  // ← Get from EmailJS dashboard
 
-   const serviceID = "YOUR_SERVICE_ID";  // ← Your service ID
-   const templateID = "YOUR_TEMPLATE_ID";  // ← Your template ID
-
-   document.getElementById('contactForm').addEventListener('submit', function(event) {
-     event.preventDefault();
-
-     // Get form data
-     const name = document.getElementById('name').value;
-     const age = document.getElementById('age').value;
-     const gender = document.querySelector('input[name="gender"]:checked')?.value || '';
-     const phone = document.getElementById('phone').value;
-     const email = document.getElementById('email').value;
-     const msg = document.getElementById('msg').value;
-
-     // Send via EmailJS
-     emailjs.send(serviceID, templateID, {
-       from_name: name,
-       age: age,
-       gender: gender,
-       phone: phone,
-       from_email: email,
-       message: msg
-     })
-     .then(function(response) {
-        alert('✅ Message sent successfully!');
-        document.getElementById('contactForm').reset();
-     }, function(error) {
-        alert('❌ Send failed: ' + JSON.stringify(error));
-     });
-   });
-
-   // WhatsApp function (existing)
-   function openwatsapp() {
-     const phone = "+919042695549";
-     const message = "Hi, I have a query about Healthcare services.";
-     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
-   }
-</script>
 
 <!-- ✅ FOOTER -->
 
