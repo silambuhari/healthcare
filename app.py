@@ -1,14 +1,16 @@
-from flask import Flask,render_template,redirect,request
+from flask import Flask, render_template, request
 from pymongo import MongoClient
 
-app=Flask(__name__)
+app = Flask(__name__)
 
-client=MongoClient("mongodb://localhost:27017/")
-db=client["healthcare"]
-collection=db["patients"]
+client = MongoClient("mongodb://localhost:27017/")
+db = client["healthcare"]
+collection = db["patients"]
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    success = False
+
     if request.method == 'POST':
         name = request.form.get('name')
         age = request.form.get('age')
@@ -17,7 +19,6 @@ def home():
         email = request.form.get('email')
         msg = request.form.get('msg')
 
-        # Store data as dictionary (IMPORTANT)
         data = {
             "name": name,
             "age": age,
@@ -27,13 +28,11 @@ def home():
             "message": msg
         }
 
-        # Insert into MongoDB
         collection.insert_one(data)
+        success = True
 
-        return "✅ Data Saved Successfully"
+    return render_template("index.html", success=success)
 
-    return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run(
-       port=5003 ,debug=True)
+    app.run(debug=True, port=5003)

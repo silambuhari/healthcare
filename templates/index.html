@@ -1,6 +1,9 @@
 <head>
     <title>Healthcare</title>
      <link rel="stylesheet" href="static/index.css">
+      <!-- ✅ FIXED CSS PATH -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
      
 </head>
 <!-- Smooth Scroll -->
@@ -128,30 +131,43 @@
 <!-- ✅ APPLICATION SECTION -->
 <section id="application">
  <div class="contact-form">
-    <center><h2>Get In Touch</h2></center>
-    <form method="POST">
-      <label>Name</label>
-      <input type="text" name="name" required />
-      <label>Age</label>
-      <input type="number" name="age" min="1" max="120" required />
-      <label>Gender</label>
-      <input type="radio" name="gender" value="male" required> Male
-      <input type="radio" name="gender" value="female"> Female
-      <input type="radio" name="gender" value="other"> Other
-      <label>Phone</label>
-      <input type="number" name="phone" required />
-      <label>Email</label>
-      <input type="email" name="email" required />
-      <label>Message</label>
-      <textarea name="msg" rows="4" required></textarea>
-      <button type="submit" onclick="showMessage(event)">
-        Send Message
-      </button>
-    </form>
+  
 
-    <p id="successMsg">✅ Application sent successfully!</p>
+   
+<h2>Get In Touch</h2>
 
-  </div>
+<form method="POST">
+
+  <label>Name</label>
+  <input type="text" name="name" required>
+
+  <label>Age</label>
+  <input type="number" name="age" required>
+
+  <label>Gender</label>
+  <input type="radio" name="gender" value="male" required> Male
+  <input type="radio" name="gender" value="female"> Female
+
+  <label>Phone</label>
+  <input type="number" name="phone" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Message</label>
+  <textarea name="msg" required></textarea>
+
+  <!-- ✅ NO onclick -->
+  <button type="submit">Send Message</button>
+
+</form>
+
+<!-- ✅ SUCCESS MESSAGE FROM BACKEND -->
+{% if success %}
+<p style="color:green;">✅ Application sent successfully!</p>
+{% endif %}
+
+
 </div>
 </section>
 
