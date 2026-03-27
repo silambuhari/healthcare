@@ -1,12 +1,13 @@
-# TODO: Fix Vercel Deploy (Raw Code → Rendered SPA)
+# Vercel CSS Fix - TODO Progress
 
-**Current Status:** Local Flask OK. Vercel shows raw code (Flask incompatible). Static server 8080 running. Vercel CLI installing.
+**Approved Plan**: Pure static deployment (root index.html + absolute CSS paths + vercel.json rewrites).
 
-- [x] Local analysis complete (no 404 code issues)
-- [x] Vercel static SPA plan approved
-- [x] Backup app.py → app.py.backup  
-- [x] Created root/index.html (static form EmailJS)
-- [x] Test static local: python -m http.server 8080 → http://localhost:8080/
-- [x] Install Vercel CLI: npm i -g vercel (running)
-- [ ] □ Deploy: vercel
-- [ ] □ Test https://healthcare-co1u.vercel.app/ (styled/images/form - no raw code)
+**Step 1: [DONE] Create root index.html** (copied from templates/index.html, fixed CSS to `/static/index.css`, disabled form POST).
+
+**Step 2: [DONE] Update vercal.json** (added static/ rewrite rule).
+
+**Step 3: [PENDING] User redeploys to Vercel** (git push or vercel CLI, check https://healthcare-q9km.vercel.app/).
+
+**Step 4: [PENDING] Verify CSS loads** (F12 → Network: no 404 for /static/index.css & images).
+
+**Future**: Serverless Flask functions for form backend (api/ folder).
