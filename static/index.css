@@ -336,7 +336,19 @@
         padding: 20px;
     }
 }
+    .contact-form {
+      width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+    }
 
+    #successMsg {
+      display: none;
+      color: green;
+      text-align: center;
+      margin-top: 10px;
+    }
 
 
 
